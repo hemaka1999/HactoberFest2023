@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int size = 6; // Adjust the size of the heart
+
+    for (int i = size; i >= -size; i--) {
+        for (int j = 0; j < 2 * (size - abs(i)); j++) {
+            // Left side of the heart
+            if (j < size - abs(i)) {
+                cout << " ";
+            } else {
+                cout << "*";
+            }
+
+            // Gap in the middle
+            if (j == size - 1) {
+                cout << " ";
+            }
+
+            // Right side of the heart
+            if (j >= size + abs(i)) {
+                cout << "*";
+            }
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
